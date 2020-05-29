@@ -98,5 +98,31 @@ kubectl apply -f deployment.loadbalancer.yaml
 works!
 
 
+#use asf jenkins and rancher
+
+create a view Data Services
+
+add job cicd-demo
+
+pipeline type
+
+git
+
+credential jenkins
+
+problem:
+ docker push <VIC_Appliance_FQDN_IP>/default-project/some-image-name:latest
+    The push refers to repository [<VIC_Appliance_FQDN_IP>/default-project/some-image-name]
+    An image does not exist locally with the tag: <VIC_Appliance_FQDN_IP>/default-roject/some-image-name
+ Cause
+The container image needs to be tag locally for the new registry before it can be pushed. 
+ Resolution
+To resolve this issue we must Tag the image using the "docker tag" command.
+
+For example:
+docker tag some-image-name:latest <VIC_Appliance_FQDN_IP>/default-project/some-image-name:latest
+
+
+
 
 
