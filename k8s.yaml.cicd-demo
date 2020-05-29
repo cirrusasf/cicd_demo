@@ -2,39 +2,39 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: cicdjz
+  name: cicd-demo
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: cicdjz
+  name: cicd-demo
 spec:
   selector:
-    app: cicdjz
+    app: cicd-demo
   ports:
   - protocol: TCP
     port: 5000
   type: LoadBalancer
-  loadBalancerIP: 10.100.30.107
+  loadBalancerIP: 10.100.30.108
 
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cicdjz
+  name: cicd-demo
 spec:
   selector:
     matchLabels:
-      app: cicdjz
+      app: cicd-demo
   replicas: 1
   template:
     metadata:
       labels:
-        app: cicdjz
+        app: cicd-demo
     spec:
       containers:
-      - name: cicdjz
-        image: docker-registry.asf.alaska.edu:5000/cicdjz
+      - name: cicd-demo
+        image: docker-registry.asf.alaska.edu:5000/cicd-demo
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
