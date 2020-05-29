@@ -122,6 +122,12 @@ To resolve this issue we must Tag the image using the "docker tag" command.
 For example:
 docker tag some-image-name:latest <VIC_Appliance_FQDN_IP>/default-project/some-image-name:latest
 
+#rancher
+
+create project data_services
+
+create namespace "cicd-demo" in project "data_services"
+
 
 
 
