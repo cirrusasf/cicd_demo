@@ -24,8 +24,8 @@ pipeline {
       steps {
         withKubeConfig([credentialsId: "5d1c490e-e980-407c-9744-5873c464e6ec"]) {
           sh "kubectl --namespace cicd-demo apply -f k8s.yaml"
-          sh "kubectl rollout restart deployment demo --namespace cicd-demo"
-          sh "kubectl rollout status deployment demo --namespace cicd-demo"
+          sh "kubectl rollout restart deployment cicd-demo --namespace cicd-demo"
+          sh "kubectl rollout status deployment cicd-demo --namespace cicd-demo"
         }
       }
     }
