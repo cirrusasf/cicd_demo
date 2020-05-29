@@ -6,5 +6,5 @@ def hello():
     return "Hello from Python!"
 
 if __name__ == "__main__":
-    #app.run(host='0.0.0.0')
-    app.run()
+    app.run(host='0.0.0.0')
+    #app.run()
