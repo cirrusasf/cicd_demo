@@ -102,13 +102,20 @@ works!
 
 create a view Data Services
 
-add job cicd-demo
+New Item
 
-pipeline type
+job name: cicd-demo
 
-git
+type: pipeline
 
-credential jenkins
+Pipeline script from SCM
+
+SCM git
+
+Repository URL: https://github.com/cirrusasf/cicd_demo.git
+credentials: jenkins
+branch specifer: */master
+
 
 problem:
  docker push <VIC_Appliance_FQDN_IP>/default-project/some-image-name:latest
