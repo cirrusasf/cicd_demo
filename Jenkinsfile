@@ -10,22 +10,22 @@ pipeline {
     stage("build image") {
       steps {
 
-        sh "docker build -t docker-registry.asf.alaska.edu:5000/cicd-demo ."
+        sh "docker build -t docker-registry.asf.alaska.edu:5000/cicdjz ."
 
       }
     }
     stage("push image") {
       steps {
-        sh "docker push docker-registry.asf.alaska.edu:5000/cicd-demo"
+        sh "docker push docker-registry.asf.alaska.edu:5000/cicdjz"
       }
     }
 
     stage("deploy") {
       steps {
-        withKubeConfig([credentialsId: "5d1c490e-e980-407c-9744-5873c464e6ec"]) {
-          sh "kubectl --namespace cicd-demo apply -f k8s.yaml"
-          sh "kubectl rollout restart deployment cicd-demo --namespace cicd-demo"
-          sh "kubectl rollout status deployment cicd-demo --namespace cicd-demo"
+        withKubeConfig([credentialsId: "rancher-dev-kubeconfig"]) {
+          sh "kubectl --namespace cicdjz apply -f k8s.yaml"
+          sh "kubectl rollout restart deployment cicdjz --namespace cicdjz"
+          sh "kubectl rollout status deployment cicdjz --namespace cicdjz"
         }
       }
     }
