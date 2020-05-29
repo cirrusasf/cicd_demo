@@ -9,7 +9,10 @@ pipeline {
   stages {
     stage("build image") {
       steps {
+
         sh "docker build -t docker-registry.asf.alaska.edu:5000/cici-demo ."
+
+        sh "docker tag cici-demo:latest docker-registry.asf.alaska.edu:5000/cici-demo:latest"
       }
     }
     stage("push image") {
