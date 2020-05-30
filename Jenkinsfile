@@ -22,7 +22,7 @@ pipeline {
 
     stage("deploy") {
       steps {
-        withKubeConfig([credentialsId: "rancher-dev-kubeconfig"]) {
+        withKubeConfig([credentialsId: "5d1c490e-e980-407c-9744-5873c464e6ec"]) {
           sh "kubectl apply -f k8s.yaml --namespace cicdjz"
           sh "kubectl rollout restart deployment cicdjz --namespace cicdjz"
           sh "kubectl rollout status deployment cicdjz --namespace cicdjz"
