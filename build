@@ -1,0 +1,1 @@
+docker build -t johnzhu999/demo .
