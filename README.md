@@ -1,3 +1,3 @@
-# flask demo CICD 13
+# flask+uwsgi CICD
 
 
