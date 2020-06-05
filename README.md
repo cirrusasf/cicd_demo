@@ -1,4 +1,4 @@
-# flask+uwsgi CICD 7
+# flask+uwsgi CICD 8
 
 
 
