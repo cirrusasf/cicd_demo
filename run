@@ -2,5 +2,5 @@
 #docker run -it -p 4041:3031 johnzhu999/demo /bin/bash
 
 #run docker in background
-docker run -d --name demo -p 4041:8080 johnzhu999/demo
 
+docker run -d --name demo -p 4041:8080 johnzhu999/demo
